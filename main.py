@@ -1,8 +1,25 @@
 
-import mysql.connector
+from create_db import create_db
+from seeds import *
 
-# from contextlib import contextmanager
 
-connection = mysql.connector.connect(host = "MIKOLA1601.zzz.com.ua", port = 3306, user = "MIKOLA1601", password = "Hm134549", database = "mikola1601")
-print(connection)
+
+if __name__ == '__main__':
+    
+    """creating DB"""
+    create_db()
+
+    """fill random data to DB"""
+    try:
+        seed_teachers()
+        seed_disciplines()
+        seed_groups()
+        seed_students()
+        seed_grades()
+
+        connect.commit()
+    except sqlite3.Error as e :
+        pprint(e)
+    finally:
+        connect.close()
 

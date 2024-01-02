@@ -77,10 +77,7 @@ def seed_grades():
         random_students = [ randint(1, NUMBER_STUDENTS) for _ in range(6) ]
         for students in random_students :
             grades.append((random_discipline, students, randint(1,12), day.date()  ))
-
     cur.executemany(sql, grades )
-
-
 
 
 
