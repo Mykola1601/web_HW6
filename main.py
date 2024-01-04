@@ -3,9 +3,7 @@ from create_db import create_db
 from seeds import *
 
 
-
 if __name__ == '__main__':
-    
     """creating DB"""
     create_db()
 

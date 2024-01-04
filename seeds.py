@@ -13,7 +13,7 @@ NUMBER_DISCIPLINES = 7
 
 
 disciplines = [
-    "матаматика",
+    "математика",
     "геометрія",
     "програмвання",
     "англійська",
@@ -74,7 +74,7 @@ def seed_grades():
     grades = []
     for day in list_dates:
         random_discipline = randint(1,len(disciplines))
-        random_students = [ randint(1, NUMBER_STUDENTS) for _ in range(6) ]
+        random_students = [ randint(1, NUMBER_STUDENTS) for _ in range(20) ]
         for students in random_students :
             grades.append((random_discipline, students, randint(1,12), day.date()  ))
     cur.executemany(sql, grades )
