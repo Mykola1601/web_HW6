@@ -17,7 +17,7 @@ if __name__ == '__main__':
 
         connect.commit()
     except sqlite3.Error as e :
-        pprint(e)
+        print(e)
     finally:
         connect.close()
 
